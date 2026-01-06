@@ -48,7 +48,7 @@ public void beforeUpdate(PersistenceEvent arg0) throws Exception {
         // Adiciona uma mensagem de aviso (aparece em amarelo no topo da tela)
     	throw new MGEModelException(
             "Atenção: O veículo possui ano de fabricação anterior a 2020. "
-            + "Verifique se isso está correto antes de prosseguir. Teste via Evento Modulo Java."
+            + "Verifique se isso está correto antes de prosseguir. Teste via Evento Modulo Java/Github 2."
         );
         // Não lança exceção → permite salvar
     }
