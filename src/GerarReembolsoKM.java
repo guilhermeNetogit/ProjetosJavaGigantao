@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class GerarReembolsoKM implements AcaoRotinaJava { // Github ->Eclipse @guilhermeNetogit 06/01/2026 15:41; Duda passou aqui 05/01/26 20:12
+public class GerarReembolsoKM implements AcaoRotinaJava { // Github <- Eclipse @guilhermeNetogit 06/01/2026 16:12; Duda passou aqui 05/01/26 20:12
 
     @Override
     public void doAction(ContextoAcao contexto) throws Exception {
