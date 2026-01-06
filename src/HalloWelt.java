@@ -3,7 +3,8 @@ import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class HalloWelt implements AcaoRotinaJava {//Github <- Eclipse @guilhermeNetogit 06/01/26 14:55
+public class HalloWelt implements AcaoRotinaJava {// Github ->Eclipse @guilhermeNetogit 06/01/2026 15:41; Duda passou aqui 05/01/26 20:12
+
     @Override
     public void doAction(ContextoAcao ctx) throws Exception {
     	String name = (String) ctx.getParam("NAME");
@@ -25,6 +26,7 @@ public class HalloWelt implements AcaoRotinaJava {//Github <- Eclipse @guilherme
         ctx.setMensagemRetorno(mensagem);
     }
 }
+
 
 
 
