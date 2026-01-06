@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class GerarReembolsoKM implements AcaoRotinaJava {
+public class GerarReembolsoKM implements AcaoRotinaJava { // Github ->Eclipse @guilhermeNetogit 06/01/2026 15:41; Duda passou aqui 05/01/26 20:12
 
     @Override
     public void doAction(ContextoAcao contexto) throws Exception {
@@ -77,7 +77,7 @@ public class GerarReembolsoKM implements AcaoRotinaJava {
 
         financeiro.setCampo("VLRDESDOB", vlrDesdob);
         financeiro.setCampo("RECDESP", -1);                  // Despesa (a pagar)
-        financeiro.setCampo("CODEMP", 1);                    // Ajuste conforme sua empresa padrão, se necessário
+        financeiro.setCampo("CODEMP", 3);                    // Ajuste conforme sua empresa padrão, se necessário
         financeiro.setCampo("NUMNOTA", numNota);
         financeiro.setCampo("DTNEG", dataAtual);
         financeiro.setCampo("CODPARC", codParc);             // Pode ser parametrizado ou vinculado ao motorista
@@ -112,3 +112,4 @@ public class GerarReembolsoKM implements AcaoRotinaJava {
     }
 
 }
+
