@@ -5,7 +5,7 @@ import br.com.sankhya.jape.vo.DynamicVO;
 import br.com.sankhya.modelcore.MGEModelException;
 import java.math.BigDecimal;
 
-public class BlkNewVei implements EventoProgramavelJava {//@guilhermeNetogit 06/01/2026 16:20
+public class BlkNewVei implements EventoProgramavelJava {//Github -> Eclipse @guilhermeNetogit 06/01/2026 17:07
 	
 	private static final BigDecimal ANO_MINIMO = new BigDecimal("2020");
 	
@@ -48,10 +48,11 @@ public void beforeUpdate(PersistenceEvent arg0) throws Exception {
         // Adiciona uma mensagem de aviso (aparece em amarelo no topo da tela)
     	throw new MGEModelException(
             "Atenção: O veículo possui ano de fabricação anterior a 2020. "
-            + "Verifique se isso está correto antes de prosseguir."
+            + "Verifique se isso está correto antes de prosseguir. Teste via Evento Modulo Java."
         );
         // Não lança exceção → permite salvar
     }
 }
 
 }
+
