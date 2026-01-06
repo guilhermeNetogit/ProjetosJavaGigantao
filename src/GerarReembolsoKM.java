@@ -89,7 +89,7 @@ public class GerarReembolsoKM implements AcaoRotinaJava { // Github -> Eclipse @
         financeiro.setCampo("CODTIPOPER", 1300);             // Tipo de operação (geralmente "LANÇAMENTO FINANCEIRO")        
         financeiro.setCampo("DTVENC", dataAtual);            // Pode ser alterado para data futura se desejar
         financeiro.setCampo("HISTORICO", 
-            "FÜNF UN DREIßIG REEMBOLSO DE VIAGEM Nº " + nroAdiantParam + ", PARA O COLABORADOR " + codParc + " - " + nomeParc + ". Lançado via JAVA/Github.");
+            "ZWEI HUNDERT FÜNF UN DREIßIG REEMBOLSO DE VIAGEM Nº " + nroAdiantParam + ", PARA O COLABORADOR " + codParc + " - " + nomeParc + ". Lançado via JAVA/Github.");
 
         // Salva o registro no banco (gera o NUFIN automaticamente)
         financeiro.save();
