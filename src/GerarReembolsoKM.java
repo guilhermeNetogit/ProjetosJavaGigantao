@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class GerarReembolsoKM implements AcaoRotinaJava { // Github <- Eclipse @guilhermeNetogit 06/01/2026 16:12; Duda passou aqui 05/01/26 20:12
+public class GerarReembolsoKM implements AcaoRotinaJava { // Github -> Eclipse @guilhermeNetogit 06/01/2026 19:42; Duda passou aqui 05/01/26 20:12
 
     @Override
     public void doAction(ContextoAcao contexto) throws Exception {
@@ -89,7 +89,7 @@ public class GerarReembolsoKM implements AcaoRotinaJava { // Github <- Eclipse @
         financeiro.setCampo("CODTIPOPER", 1300);             // Tipo de operação (geralmente "LANÇAMENTO FINANCEIRO")        
         financeiro.setCampo("DTVENC", dataAtual);            // Pode ser alterado para data futura se desejar
         financeiro.setCampo("HISTORICO", 
-            "REEMBOLSO DE VIAGEM Nº " + nroAdiantParam + ", PARA O COLABORADOR " + codParc + " - " + nomeParc + ". Lançado via JAVA/Github.");
+            "ß REEMBOLSO DE VIAGEM Nº " + nroAdiantParam + ", PARA O COLABORADOR " + codParc + " - " + nomeParc + ". Lançado via JAVA/Github.");
 
         // Salva o registro no banco (gera o NUFIN automaticamente)
         financeiro.save();
@@ -113,4 +113,5 @@ public class GerarReembolsoKM implements AcaoRotinaJava { // Github <- Eclipse @
     }
 
 }
+
 
