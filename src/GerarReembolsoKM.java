@@ -84,6 +84,7 @@ public class GerarReembolsoKM implements AcaoRotinaJava { // Github ->Eclipse @g
         financeiro.setCampo("CODNAT", 3040600);              // Natureza financeira - verifique se está correta
         financeiro.setCampo("CODCENCUS", cenCus);            // Centro Resultado do Parceiro - puxando do usuário        
         financeiro.setCampo("CODBCO", 341);
+        financeiro.setCampo("CODCTABCOINT", 7);
         financeiro.setCampo("CODTIPTIT", 2);                 // Tipo de título (geralmente "Despesa Diversa")
         financeiro.setCampo("CODTIPOPER", 1300);             // Tipo de operação (geralmente "LANÇAMENTO FINANCEIRO")        
         financeiro.setCampo("DTVENC", dataAtual);            // Pode ser alterado para data futura se desejar
