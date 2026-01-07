@@ -5,8 +5,10 @@ import br.com.sankhya.extensions.actionbutton.Registro;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.NumberFormat;
+import java.util.Locale;
 
-public class TesteJavaXXXVIII implements AcaoRotinaJava {
+public class TesteJavaXXXVIII implements AcaoRotinaJava { //@guilhermeNetogit 07/01/2026 17:09
    public void doAction(ContextoAcao contexto) throws Exception {
       Registro[] registros = contexto.getLinhas();
       if (registros != null && registros.length != 0) {
@@ -62,6 +64,7 @@ public class TesteJavaXXXVIII implements AcaoRotinaJava {
                      }
 
                      query.close();
+                     
                      Registro financeiro = contexto.novaLinha("TGFFIN");
                      financeiro.setCampo("VLRDESDOB", vlrDesdob);
                      financeiro.setCampo("RECDESP", -1);
@@ -89,8 +92,23 @@ public class TesteJavaXXXVIII implements AcaoRotinaJava {
                      updateQuery.setParam("NROADIANT", nroAdiant);
                      updateQuery.update("UPDATE AD_ACERTOVIAGEM SET STATUS_REGISTRO = '77', DHAPROV = GETDATE() , CODUSUAPROV = " + contexto.getUsuarioLogado() + ", " + "NUFINDESP = " + financeiro.getCampo("NUFIN") + ", " + "OBSADIANT = CAST(ISNULL(OBSADIANT, '') AS VARCHAR(MAX)) + CHAR(13) + CHAR(10) + 'Título financeiro gerado: NUFIN = " + financeiro.getCampo("NUFIN") + "' " + "WHERE NROADIANT = {NROADIANT}");
                      updateQuery.close();
+                     
+                     BigDecimal vlrDesdobra = (BigDecimal) financeiro.getCampo("VLRDESDOB");
+                     NumberFormat formatoMoedaBR = NumberFormat.getCurrencyInstance(new Locale.Builder().setLanguage("pt").setRegion("BR").build());
+                     String valorFormatado = formatoMoedaBR.format(vlrDesdobra);                     
                      StringBuffer mensagem = new StringBuffer();
-                     mensagem.append("Foi gerado o título ").append(financeiro.getCampo("NUFIN")).append(" no valor de ").append(financeiro.getCampo("VLRDESDOB")).append(" como reembolso de Viagem para o registro nº ").append(nroAdiant).append(" para o parceiro ").append(codParc).append(" - ").append(nomeParc);
+                     
+                     mensagem.append("Foi gerado o título ");
+                     mensagem.append(financeiro.getCampo("NUFIN"));
+                     mensagem.append(" no valor de ");
+                     mensagem.append(valorFormatado);
+                     //mensagem.append(financeiro.getCampo("VLRDESDOB"));
+                     mensagem.append(" como reembolso de Viagem para o registro nº ");
+                     mensagem.append(nroAdiant);
+                     mensagem.append(" para o parceiro ");
+                     mensagem.append(codParc);
+                     mensagem.append(" - ");
+                     mensagem.append(nomeParc);
                      contexto.setMensagemRetorno(mensagem.toString());
                   }
                } else {
