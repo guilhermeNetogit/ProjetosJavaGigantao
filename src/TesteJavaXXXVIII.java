@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class TesteJavaXXXVIII implements AcaoRotinaJava { //@guilhermeNetogit 07/01/2026 17:09
+public class TesteJavaXXXVIII implements AcaoRotinaJava { //@GuilhermeNetoGig 07/01/2026 17:20
    public void doAction(ContextoAcao contexto) throws Exception {
       Registro[] registros = contexto.getLinhas();
       if (registros != null && registros.length != 0) {
@@ -86,7 +86,7 @@ public class TesteJavaXXXVIII implements AcaoRotinaJava { //@guilhermeNetogit 07
                      financeiro.setCampo("CODTIPTIT", 2);
                      financeiro.setCampo("CODTIPOPER", 215);
                      financeiro.setCampo("DTVENC", dataSol);
-                     financeiro.setCampo("HISTORICO", "TESTE JAVA PARA REEMBOLSO DE VIAGEM " + nroAdiant);
+                     financeiro.setCampo("HISTORICO", "TESTE JAVA/Github PARA REEMBOLSO DE VIAGEM " + nroAdiant);
                      financeiro.save();
                      QueryExecutor updateQuery = contexto.getQuery();
                      updateQuery.setParam("NROADIANT", nroAdiant);
@@ -121,3 +121,4 @@ public class TesteJavaXXXVIII implements AcaoRotinaJava { //@guilhermeNetogit 07
       }
    }
 }
+
