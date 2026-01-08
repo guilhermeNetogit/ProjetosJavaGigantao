@@ -1,3 +1,6 @@
+
+//package br.com.sankhya.action.acaoagendada; // Eclipse @guilhermeNetoGit passou aqui em 07/01/26 22:16:36
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -5,6 +8,8 @@ import java.math.BigDecimal;
 
 import org.cuckoo.core.ScheduledAction;
 import org.cuckoo.core.ScheduledActionContext;
+
+import com.sankhya.util.BigDecimalUtil;
 
 import br.com.sankhya.jape.EntityFacade;
 import br.com.sankhya.jape.core.JapeSession;
@@ -64,7 +69,7 @@ public class AcaoAgendada implements ScheduledAction {
 			.set("CODMSG", null)
 			.set("STATUS", "Pendente")
 			.set("TIPOENVIO", "E")
-			.set("MAXTENTENVIO", BigDecimal.valueOf(3))
+			.set("MAXTENTENVIO", BigDecimalUtil.valueOf(3))
 			.set("ASSUNTO", titulo)
 			.set("MENSAGEM", mensagem.toCharArray())
 			.save();
@@ -99,5 +104,4 @@ public class AcaoAgendada implements ScheduledAction {
 
 		return contentBuilder.toString();
 	}
-
 }
