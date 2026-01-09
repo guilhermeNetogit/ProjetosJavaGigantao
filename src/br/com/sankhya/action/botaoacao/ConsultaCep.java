@@ -1,10 +1,12 @@
+package br.com.sankhya.action.botaoacao;
+
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import br.com.sankhya.modelcore.util.PesquisaCepHelper;
 import br.com.sankhya.modelcore.util.PesquisaCepHelper.Endereco;
 import java.util.List;
 
-public class ConsultaCep implements AcaoRotinaJava {//@guilhermeNetoGig
+public class ConsultaCep implements AcaoRotinaJava {// Eclipse -> Github @guilhermeNetogit passou aqui em 08/01/2026 22:13:09
 
     @Override
     public void doAction(ContextoAcao contexto) throws Exception {
@@ -74,5 +76,4 @@ public class ConsultaCep implements AcaoRotinaJava {//@guilhermeNetoGig
         ret.append("</html>");
         return ret.toString();
     }
-
 }
