@@ -40,7 +40,7 @@
                                                                                 <table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
                                                                                     <tr>
                                                                                         <td role="module-content">
-                                                                                            <p>AvaliaÃ§Ã£o de Atendimento</p>
+                                                                                            <p>Avaliação de Atendimento</p>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </table>
@@ -85,4 +85,5 @@
         </center>
     </body>
 </html>
+
 
