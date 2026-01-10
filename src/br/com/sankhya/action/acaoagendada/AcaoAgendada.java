@@ -44,7 +44,10 @@ public class AcaoAgendada implements ScheduledAction {
 					+ " - Nome: " 
 					+ registroVO.asString("NOMEPARC"));
 
-			enviarEmail("Teste Ação Agendada", mensagem, "guilhermeneto@gigantaolocadora.com.br","eng.guilhermeneto@hotmail.com");
+			String destinatarios = "guilhermeneto@gigantaolocadora.com.br;"
+				    + "eng.guilhermeneto@hotmail.com;"
+				    + "guilherme.kellynha@gmail.com";
+			enviarEmail("Teste Ação Agendada", mensagem, destinatarios/*"guilhermeneto@gigantaolocadora.com.br"*/);
 
 			//System.out.println("EMAIL ENVIADO COM SUCESSO");
 			
@@ -103,5 +106,4 @@ public class AcaoAgendada implements ScheduledAction {
 
 		return contentBuilder.toString();
 	}
-
 }
