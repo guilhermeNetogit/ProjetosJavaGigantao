@@ -1,4 +1,4 @@
-package br.com.sankhya.action.acaoagendada; // Eclipse -> Github @guilhermeNetogit passou aqui em 08/01/26 21:51:36
+package br.com.sankhya.action.acaoagendada; // Eclipse <- Github @guilhermeNetogit passou aqui em 09/01/26 21:08:36
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -44,7 +44,7 @@ public class AcaoAgendada implements ScheduledAction {
 					+ " - Nome: " 
 					+ registroVO.asString("NOMEPARC"));
 
-			enviarEmail("Teste Ação Agendada", mensagem, "guilhermeneto@gigantaolocadora.com.br");
+			enviarEmail("Teste Ação Agendada", mensagem, "guilhermeneto@gigantaolocadora.com.br","eng.guilhermeneto@hotmail.com");
 
 			//System.out.println("EMAIL ENVIADO COM SUCESSO");
 			
@@ -103,4 +103,5 @@ public class AcaoAgendada implements ScheduledAction {
 
 		return contentBuilder.toString();
 	}
+
 }
