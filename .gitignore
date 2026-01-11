@@ -1,21 +1,75 @@
-# Eclipse
-.classpath
-.project
-.settings/
-bin/
+# =====================================
+# Eclipse / IDE específicos
+# =====================================
 .metadata/
+.recommenders/
+bin/
+*.launch
+*.log
+.classpath               # ← comente esta linha se quiser versionar
+.project                 # ← comente esta linha se quiser versionar
+.settings/               # ← comente esta pasta se o time padroniza configs
 
-# Java
+# =====================================
+# Java compilados e artefatos
+# =====================================
 *.class
 *.jar
 *.war
+*.ear
+*.sar
 
-# Build
+# =====================================
+# Build tools (Maven / Gradle / etc)
+# =====================================
 target/
 build/
-*.log
+out/
+.gradle/
+gradle/
+gradle-app-tasks/
+*.gradle.kts.cache
 
-# Sistema
+# =====================================
+# Arquivos temporários e de sistema
+# =====================================
+*.tmp
+*.bak
+*.swp
+*~
 .DS_Store
 Thumbs.db
-*.tmp
+ehthumbs.db
+desktop.ini
+
+# =====================================
+# Logs e relatórios
+# =====================================
+*.log
+logs/
+log/
+
+# =====================================
+# Outros comuns em projetos Java
+# =====================================
+#.classpath.generated
+#.project.generated
+#dependency-reduced-pom.xml   # Maven shade plugin
+#release.properties           # Maven release plugin
+#pom.xml.releaseBackup
+#*.releaseBackup
+#mvnw
+#mvnw.cmd
+#gradlew
+#gradlew.bat
+#gradle-wrapper.jar
+
+# =====================================
+# Bancos de dados locais / testes
+# =====================================
+#*.h2.db
+#*.mv.db
+#*.trace.db
+#*.sql
+#db/
+#data/
