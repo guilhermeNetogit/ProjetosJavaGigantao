@@ -1,3 +1,4 @@
+package br.com.sankhya.action.botaoacao;
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import br.com.sankhya.extensions.actionbutton.QueryExecutor;
@@ -8,7 +9,7 @@ import java.sql.Timestamp;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class TesteJavaXXXVIII implements AcaoRotinaJava { //@GuilhermeNetoGig 07/01/2026 17:20
+public class AprovaAdiantReemb implements AcaoRotinaJava { //@GuilhermeNetoGig 07/01/2026 17:20
    public void doAction(ContextoAcao contexto) throws Exception {
       Registro[] registros = contexto.getLinhas();
       if (registros != null && registros.length != 0) {
@@ -121,4 +122,3 @@ public class TesteJavaXXXVIII implements AcaoRotinaJava { //@GuilhermeNetoGig 07
       }
    }
 }
-

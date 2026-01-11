@@ -1,3 +1,4 @@
+package br.com.sankhya.action.botaoacao;
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import br.com.sankhya.extensions.actionbutton.QueryExecutor;
@@ -9,7 +10,7 @@ import java.util.Calendar;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class GerarReembolsoKM implements AcaoRotinaJava { // Github -> Eclipse @guilhermeNetogit 06/01/2026 20:36; Duda passou aqui 05/01/26 20:12
+public class GeraFinAdReemb implements AcaoRotinaJava { // Github -> Eclipse @guilhermeNetogit 06/01/2026 20:36; Duda passou aqui 05/01/26 20:12
 
     @Override
     public void doAction(ContextoAcao contexto) throws Exception {
