@@ -10,15 +10,12 @@ import br.com.sankhya.modelcore.util.EntityFacadeFactory;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class DeleteRegistro implements AcaoRotinaJava { // Eclipse -> Github user @guilhermeNetogit passou aqui em 11 de jan. de 2026
+public class DeleteRegistro implements AcaoRotinaJava {// Eclipse -> Github @guilhermeNetogit passou aqui em 11/01/2026 20:10:40
    public void doAction(ContextoAcao ctx) throws Exception {
-      new BigDecimal(0);
-      new BigDecimal(0);
+
       String tipMov = "";
-      new BigDecimal(0);
-      new BigDecimal(0);
       Date referencia = null;
-      boolean t = ctx.confirmarSimNao("Excluir movimento(s)", "<br>Atenção!!!</b><br><br>"
+      boolean t = ctx.confirmarSimNao("Excluir movimento(s)", "<b>Atenção!!!</b><br><br>"
     		  							+ "Tem certeza que deseja excluir " + ctx.getLinhas().length + " movimento(s)?<br>"
     		  							+ "A ação não poderá ser desfeita.", 1);
       if (t) {
@@ -33,7 +30,7 @@ public class DeleteRegistro implements AcaoRotinaJava { // Eclipse -> Github use
             this.removerRegistro(ctx, sequencia, codEvento, tipMov, codFunc, codEmp, referencia);
          }
 
-         ctx.setMensagemRetorno("Sucesso! by Guilherme");
+         ctx.setMensagemRetorno("Registro(s) deletado(s) com sucesso! <br><br> by Guilherme");
       }
 
    }
@@ -44,13 +41,20 @@ public class DeleteRegistro implements AcaoRotinaJava { // Eclipse -> Github use
       NativeSql nativeSql = new NativeSql(jdbc);
 
       try {
-         nativeSql.executeUpdate("DELETE TFPMOV"
-        		 				+ "WHERE REFERENCIA = CONVERT(datetime, '" + referencia + "', 120) "
-        		 				+ " AND CODEMP = " + codEmp 
-        		 				+ " AND CODFUNC = " + codFunc 
-        		 				+ " AND TIPMOV = '" + tipMov + "'" 
-        		 				+ " AND CODEVENTO =" + codEvento 
-        		 				+ " AND SEQUENCIA =" + sequencia);
+    	  nativeSql.setNamedParameter("REFERENCIA", referencia);
+    	  nativeSql.setNamedParameter("CODEMP", codEmp);
+    	  nativeSql.setNamedParameter("CODFUNC", codFunc);
+    	  nativeSql.setNamedParameter("TIPMOV", tipMov);
+    	  nativeSql.setNamedParameter("CODEVENTO", codEvento);
+    	  nativeSql.setNamedParameter("SEQUENCIA", sequencia);
+    	  
+    	  nativeSql.executeUpdate("DELETE TFPMOV"
+        		 				+ " WHERE REFERENCIA = CONVERT(datetime, '" + referencia + "', 120) "
+        		 				+ " AND CODEMP		 = " + codEmp 
+        		 				+ " AND CODFUNC		 = " + codFunc 
+        		 				+ " AND TIPMOV 		 = '" + tipMov + "'" 
+        		 				+ " AND CODEVENTO	 =" + codEvento 
+        		 				+ " AND SEQUENCIA	 =" + sequencia);
       } catch (Exception var15) {
          throw new RuntimeException(var15);
       } finally {

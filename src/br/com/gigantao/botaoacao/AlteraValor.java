@@ -11,12 +11,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AlteraValor implements AcaoRotinaJava {
-   public void doAction(ContextoAcao ctx) throws Exception {// Eclipse -> Github @guilhermeNetogit passou aqui em 11/01/2026 16:20:25
-      new BigDecimal(0);
-      new BigDecimal(0);
+   public void doAction(ContextoAcao ctx) throws Exception {// Eclipse -> Github @guilhermeNetogit passou aqui em 11/01/2026 20:09:08
+
       String tipMov = "";
-      new BigDecimal(0);
-      new BigDecimal(0);
       Date referencia = null;
       Double vlrMovNew = (Double)ctx.getParam("VLRMOV");
 
@@ -31,7 +28,7 @@ public class AlteraValor implements AcaoRotinaJava {
          this.alterarVlrMov(vlrMovNew, sequencia, codEvento, tipMov, codFunc, codEmp, referencia);
       }
 
-      ctx.setMensagemRetorno("Sucesso! by Guilherme");
+      ctx.setMensagemRetorno("Registro(s) alterado(s) com sucesso! <br><br>by Guilherme");
    }
 
    public void alterarVlrMov(Double vlrMovNew, BigDecimal sequencia, BigDecimal codEvento, String tipMov, BigDecimal codFunc, BigDecimal codEmp, Date referencia) {
@@ -40,13 +37,21 @@ public class AlteraValor implements AcaoRotinaJava {
       NativeSql nativeSql = new NativeSql(jdbc);
 
       try {
-         nativeSql.executeUpdate("UPDATE TFPMOV SET VLRMOV = " + vlrMovNew
-        		 				+ " WHERE REFERENCIA = CONVERT(datetime, '" + referencia + "', 120) " 
-        		 				+ " AND CODEMP = " + codEmp 
-        		 				+ " AND CODFUNC = " + codFunc 
-        		 				+ " AND TIPMOV = '" + tipMov + "'" 
-        		 				+ " AND CODEVENTO =" + codEvento 
-        		 				+ " AND SEQUENCIA =" + sequencia);
+    	  nativeSql.setNamedParameter("VLRMOV",     vlrMovNew);
+          nativeSql.setNamedParameter("REFERENCIA", referencia);
+          nativeSql.setNamedParameter("CODEMP",     codEmp);
+          nativeSql.setNamedParameter("CODFUNC",    codFunc);
+          nativeSql.setNamedParameter("TIPMOV",     tipMov);
+          nativeSql.setNamedParameter("CODEVENTO",  codEvento);
+          nativeSql.setNamedParameter("SEQUENCIA",  sequencia);
+          
+          nativeSql.executeUpdate("UPDATE TFPMOV SET VLRMOV = " + vlrMovNew
+        		 				+ " WHERE REFERENCIA		= CONVERT(datetime, '" + referencia + "', 120) " 
+        		 				+ " AND CODEMP				= " + codEmp 
+        		 				+ " AND CODFUNC				= " + codFunc 
+        		 				+ " AND TIPMOV				= '" + tipMov + "'" 
+        		 				+ " AND CODEVENTO			= " + codEvento 
+        		 				+ " AND SEQUENCIA			= " + sequencia);
       } catch (Exception var15) {
          throw new RuntimeException(var15);
       } finally {
@@ -54,6 +59,5 @@ public class AlteraValor implements AcaoRotinaJava {
          JdbcWrapper.closeSession(jdbc);
          NativeSql.releaseResources(nativeSql);
       }
-
    }
 }
