@@ -1,3 +1,4 @@
+package br.com.sankhya.action.botaoacao;
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import br.com.sankhya.extensions.actionbutton.QueryExecutor;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class gerarReqProdAlmox_v1 implements AcaoRotinaJava {
+public class GeraReqProdAlmox_v1 implements AcaoRotinaJava {// Eclipse -> Github @guilhermeNetogit passou aqui em 11/01/2026 14:42:50
    private String msgRetorno = "";
    private String temDados = "N";
 
