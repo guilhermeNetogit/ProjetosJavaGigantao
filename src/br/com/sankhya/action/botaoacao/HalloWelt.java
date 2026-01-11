@@ -1,9 +1,10 @@
+package br.com.sankhya.action.botaoacao;
 import br.com.sankhya.extensions.actionbutton.AcaoRotinaJava;
 import br.com.sankhya.extensions.actionbutton.ContextoAcao;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class HalloWelt implements AcaoRotinaJava {// Github <- Eclipse @guilhermeNetogit 06/01/2026 19:41; Duda passou aqui 06/01/26 22:10
+public class HalloWelt implements AcaoRotinaJava {// Eclipse -> Github @guilhermeNetogit passou aqui em 11/01/2026 14:00:32; Duda passou aqui 06/01/26 22:10
 
     @Override
     public void doAction(ContextoAcao ctx) throws Exception {
